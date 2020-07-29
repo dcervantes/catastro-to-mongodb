@@ -1,0 +1,18 @@
+{
+    "title" : "Finca",
+    "version" : 1.0,
+    "description" : "Existirá uno por cada parcela catastral implicada.",
+    "type": "object",
+    "properties": {
+        "address": {
+            "type": "object",
+            "properties": {
+                "street": {"type": "string"},
+                "city": {"type": "string"},
+                "state": {"type": "string"}
+                },
+            "required":["street", "city"]
+            }
+    },
+    "required": ["address"]
+}

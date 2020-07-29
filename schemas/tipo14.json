@@ -1,0 +1,18 @@
+{
+    "title" : "Construcción",
+    "version" : 1,
+    "description" : "Existirá uno por cada construcción de cada unidad constructiva en cada parcela catastral.",
+    "type": "object",
+    "properties": {
+        "address": {
+            "type": "object",
+            "properties": {
+                "street": {"type": "string"},
+                "city": {"type": "string"},
+                "state": {"type": "string"}
+                },
+            "required":["street", "city"]
+            }
+    },
+    "required": ["address"]
+}
