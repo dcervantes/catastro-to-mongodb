@@ -1,18 +1,349 @@
 {
-    "title" : "Inmueble",
-    "version" : 1,
-    "description" : "Existirá uno por cada bien inmueble en cada parcela catastral.",
+    "title": "Inmueble",
+    "version": 1,
+    "description": "Existirá uno por cada bien inmueble en cada parcela catastral.",
     "type": "object",
     "properties": {
-        "address": {
+        "identificacion_inmueble": {
+            "title": "Identificación del bien inmueble",
+            "description": "Identificación del bien inmueble",
             "type": "object",
             "properties": {
-                "street": {"type": "string"},
-                "city": {"type": "string"},
-                "state": {"type": "string"}
+                "cod_deleg_meh": {
+                    "title": "Código de Delegación del MEH",
+                    "description": "Código de Delegación del MEH",
+                    "type": "number"
                 },
-            "required":["street", "city"]
+                "cod_muni_dgc": {
+                    "title": "Código de Delegación del MEH",
+                    "description": "Código de Delegación del MEH",
+                    "type": "number"
+                },
+                "clase_bi": {
+                    "title": "Clase del Bien inmueble (UR, RU, BI)",
+                    "description": "Clase del Bien inmueble (UR, RU, BI)",
+                    "type": "string"
+                },
+                "parcela_catastral": {
+                    "title": "Parcela catastral",
+                    "description": "Parcela catastral",
+                    "type": "string"
+                },
+                "num_sec_bi": {
+                    "title": "Parcela catastral",
+                    "description": "Número secuencial del bien inmueble (Número de Cargo) dentro de la parcela catastral",
+                    "type": "number"
+                },
+                "p_c_control": {
+                    "title": "Primer carácter de control",
+                    "description": "Primer carácter de control",
+                    "type": "string"
+                },
+                "s_c_control": {
+                    "title": "Segundo carácter de control",
+                    "description": "Segundo carácter de control",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cod_deleg_meh",
+                "cod_muni_dgc",
+                "clase_bi",
+                "parcela_catastral",
+                "num_sec_bi",
+                "p_c_control",
+                "s_c_control"
+            ]
+        },
+        "identificadores_adicionales": {
+            "title": "Identificadores adicionales",
+            "description": "Identificadores adicionales",
+            "type": "object",
+            "properties": {
+                "num_fijo_bi": {
+                    "title": "Número fijo del Bien Inmueble",
+                    "description": "Número fijo del Bien Inmueble (asignado por la Gerencia del Catastro)",
+                    "type": "number"
+                },
+                "num_id_ayunt": {
+                    "title": "Identificación del Bien Inmueble",
+                    "description": "Campo para la identificación del Bien Inmueble asignado por el Ayuntamiento",
+                    "type": "string"
+                },
+                "num_finca_reg": {
+                    "title": "Número de finca registral",
+                    "description": "Número de finca registral, incluyendo registro de la propiedad (Registro de la propiedad 5 dígitos, sección 2 dígitos, número finca 6 dígitos, subfinca 6 dígitos)",
+                    "type": "string"
+                },
+                "reg_prop": {
+                    "title": "Registro de la propiedad",
+                    "description": "Registro de la propiedad",
+                    "type": "string"
+                },
+                "seccion": {
+                    "title": "Sección",
+                    "description": " Sección",
+                    "type": "string"
+                },
+                "finca": {
+                    "title": "Número de finca",
+                    "description": "Número finca",
+                    "type": "string"
+                },
+                "subfinca": {
+                    "title": "Subfinca",
+                    "description": "Subfinca",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "num_fijo_bi",
+                "num_finca_reg"
+            ]
+        },
+        "localizacion_inmueble": {
+            "title": "Localización del bien inmueble",
+            "description": "Domicilio Tributario/Localización del bien inmueble",
+            "type": "object",
+            "properties": {
+                "cod_prov_ine": {
+                    "title": "Código de Provincia",
+                    "description": "Código de Provincia (INE)",
+                    "type": "number"
+                },
+                "nombre_provincia": {
+                    "title": "Nombre Provincia",
+                    "description": "Nombre Provincia",
+                    "type": "string"
+                },
+                "cod_muni_dgc": {
+                    "title": "Código del Municipio",
+                    "description": "Código del Municipio (DGC)",
+                    "type": "number"
+                },
+                "cod_muni_ine": {
+                    "title": "Código de Municipio",
+                    "description": "Código de Municipio (INE). Excluido el último dígito de control",
+                    "type": "number"
+                },
+                "nombre_municipio": {
+                    "title": "Nombre del Municipio",
+                    "description": "Nombre del Municipio",
+                    "type": "string"
+                },
+                "nomb_ent_menor": {
+                    "title": "Nombre de la entidad menor",
+                    "description": "Nombre de la entidad menor, en caso de existir",
+                    "type": "string"
+                },
+                "cod_via_dgc": {
+                    "title": "Código de vía pública",
+                    "description": "Código de vía pública (DGC)",
+                    "type": "number"
+                },
+                "tipo_via_pub": {
+                    "title": "Tipo de vía o sigla pública",
+                    "description": "Tipo de vía o sigla pública",
+                    "type": "string"
+                },
+                "nomb_via_pub": {
+                    "title": "Nombre de la vía pública",
+                    "description": "Nombre de la vía pública",
+                    "type": "string"
+                },
+                "p_num_policia": {
+                    "title": "Primer número de policía",
+                    "description": "Primer número de policía",
+                    "type": "number"
+                },
+                "p_letra": {
+                    "title": "Primera letra",
+                    "description": "Primera letra. (Carácter de duplicado)",
+                    "type": "string"
+                },
+                "s_num_policia": {
+                    "title": "Segundo número de policía",
+                    "description": "Segundo número de policía",
+                    "type": "number"
+                },
+                "s_letra": {
+                    "title": "Segunda letra",
+                    "description": "Segunda letra. (Carácter de duplicado)",
+                    "type": "string"
+                },
+                "kilometro": {
+                    "title": "Kilómetro",
+                    "description": "Kilómetro (expresado con tres enteros y dos decimales)",
+                    "type": "number"
+                },
+                "bloque": {
+                    "title": "Bloque",
+                    "description": "Bloque",
+                    "type": "string"
+                },
+                "escalera": {
+                    "title": "Escalera",
+                    "description": "Escalera",
+                    "type": "string"
+                },
+                "planta": {
+                    "title": "Planta",
+                    "description": "Planta",
+                    "type": "string"
+                },
+                "puerta": {
+                    "title": "Puerta",
+                    "description": "Puerta",
+                    "type": "string"
+                },
+                "txt_dir": {
+                    "title": "Texto de dirección no estructurada",
+                    "description": "Texto de dirección no estructurada",
+                    "type": "string"
+                },
+                "cp": {
+                    "title": "Código postal",
+                    "description": "Código postal",
+                    "type": "number"
+                },
+                "dis_muni": {
+                    "title": "Distrito municipal",
+                    "description": "Distrito municipal, en caso de existir",
+                    "type": "number"
+                },
+                "cod_muni_dgc_ori": {
+                    "title": "Código del municipio origen",
+                    "description": "Código del municipio origen en caso de agregación (DGC)",
+                    "type": "number"
+                },
+                "cod_zona_conc": {
+                    "title": "Código de la zona de concentración",
+                    "description": "Código de la zona de concentración",
+                    "type": "number"
+                },
+                "cod_poli": {
+                    "title": "Código de polígono",
+                    "description": "Código de polígono",
+                    "type": "number"
+                },
+                "cod_parcela": {
+                    "title": "Código de parcela",
+                    "description": "Código de parcela",
+                    "type": "number"
+                },
+                "cod_paraj_dgc": {
+                    "title": "Código de Paraje",
+                    "description": "Código de Paraje (DGC)",
+                    "type": "number"
+                },
+                "nomb_paraj": {
+                    "title": "Nombre del paraje",
+                    "description": "Nombre del paraje",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cod_prov_ine",
+                "nombre_provincia",
+                "cod_muni_dgc",
+                "cod_muni_ine",
+                "nombre_municipio",
+                "cod_via_dgc",
+                "tipo_via_pub",
+                "nomb_via_pub",
+                "p_num_policia",
+                "s_num_policia",
+                "kilometro",
+                "cp",
+                "dis_muni",
+                "cod_muni_dgc_ori",
+                "cod_zona_conc",
+                "cod_poli",
+                "cod_parcela",
+                "cod_paraj_dgc"
+            ]
+        },
+        "informacion_adicional": {
+            "title": "Identificación adicional del bien inmueble",
+            "description": "Identificación adicional del bien inmueble",
+            "type": "object",
+            "properties": {
+                "num_ord_escr": {
+                    "title": "Número de orden del inmueble",
+                    "description": "Número de orden del inmueble en la escritura de división horizontal",
+                    "type": "string"
+                },
+                "antiguedad": {
+                    "title": "Año de antigüedad del bien inmueble",
+                    "description": "Año de antigüedad del bien inmueble",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "antiguedad"
+            ]
+        },
+        "datos_economicos": {
+            "title": "Datos económicos del bien Inmueble",
+            "description": "Datos económicos del bien Inmueble",
+            "type": "object",
+            "properties": {
+                "grupo_bi": {
+                    "title": "Grupo de los bienes inmuebles",
+                    "description": "Clave de grupo de los bienes inmuebles de características especiales, o de uso de los bienes urbanos, según codificación establecida en los cuadros 1 y 2 que figuran al final de este ANEXO",
+                    "type": "string"
+                },
+                "sup_elemento": {
+                    "title": "Superficie del elemento",
+                    "description": "Superficie del elemento o elementos constructivos asociados al inmueble en el caso de fincas construidas (en metros cuadrados)",
+                    "type": "number"
+                },
+                "sup_inmueble": {
+                    "title": "Superficie asociada al inmueble",
+                    "description": "Superficie asociada al inmueble, en el caso de solares, fincas construidas sin división horizontal o parcelas rústicas (en metros cuadrados)",
+                    "type": "number"
+                },
+                "coef_prop": {
+                    "title": "Coeficiente de propiedad",
+                    "description": "Coeficiente de propiedad respecto a la finca, en caso de división horizontal, expresado con tres enteros y seis decimales",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "grupo_bi",
+                "sup_elemento",
+                "sup_inmueble",
+                "coef_prop"
+            ]
+        },
+        "precios": {
+            "title": "Precios relacionados con el inmueble",
+            "description": "Precios relacionados con el inmueble",
+            "type": "array",
+            "items": {
+                "precios_compra": {
+                    "title": "Precios de compra o alquiler del inmueble",
+                    "description": "Precios de compra o alquiler del inmueble",
+                    "type": "object",
+                    "properties": {
+                        "id_precio": {
+                            "type": "string"
+                        },
+                        "tipo": {
+                            "type": "string"
+                        },
+                        "fuente": {
+                            "type": "string"
+                        },
+                        "fecha": {
+                            "type": "date"
+                        },
+                        "precio": {
+                            "type": "number"
+                        }
+                    }
+                }
             }
-    },
-    "required": ["address"]
+        }
+    }
 }
