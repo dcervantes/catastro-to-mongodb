@@ -1,0 +1,29 @@
+{
+    "id_elem_rep": {
+        "cod_deleg_meh": {
+            "val_format": "N",
+            "ini_char": 24,
+            "length": 2
+        },
+        "cod_muni_dgc": {
+            "val_format": "N",
+            "ini_char": 26,
+            "length": 3
+        },
+        "parcela_catastral": {
+            "val_format": "X",
+            "ini_char": 31,
+            "length": 14
+        },
+        "num_ord_elem_rep": {
+            "val_format": "X",
+            "ini_char": 45,
+            "length": 4
+        },
+        "cal_cas_subp_rep": {
+            "val_format": "X",
+            "ini_char": 49,
+            "length": 2
+        }
+    }
+}

@@ -1,0 +1,276 @@
+{
+    "identificacion_inmueble": {
+        "cod_deleg_meh": {
+            "val_format": "N",
+            "ini_char": 24,
+            "length": 2
+        },
+        "cod_muni_dgc": {
+            "val_format": "N",
+            "ini_char": 26,
+            "length": 3
+        },
+        "clase_bi": {
+            "val_format": "X",
+            "ini_char": 29,
+            "length": 2,
+            "dict": {
+                "UR": "Urbana",
+                "RU": "Rústica",
+                "BI": "BICES: Bien inmueble de características especiales"
+            }
+        },
+        "parcela_catastral": {
+            "val_format": "X",
+            "ini_char": 31,
+            "length": 14
+        },
+        "num_sec_bi": {
+            "val_format": "N",
+            "ini_char": 45,
+            "length": 4
+        },
+        "p_c_control": {
+            "val_format": "X",
+            "ini_char": 49,
+            "length": 1
+        },
+        "s_c_control": {
+            "val_format": "X",
+            "ini_char": 50,
+            "length": 1
+        }
+    },
+    "identificadores_adicionales": {
+        "num_fijo_bi": {
+            "val_format": "N",
+            "ini_char": 51,
+            "length": 8
+        },
+        "num_id_ayunt": {
+            "val_format": "X",
+            "ini_char": 59,
+            "length": 15
+        },
+        "num_finca_reg": {
+            "val_format": "X",
+            "ini_char": 74,
+            "length": 19
+        },
+        "reg_prop": {
+            "val_format": "X",
+            "ini_char": 74,
+            "length": 5
+        },
+        "seccion": {
+            "val_format": "X",
+            "ini_char": 79,
+            "length": 2
+        },
+        "finca": {
+            "val_format": "X",
+            "ini_char": 81,
+            "length": 6
+        },
+        "subfinca": {
+            "val_format": "X",
+            "ini_char": 87,
+            "length": 6
+        }
+    },
+    "localizacion_inmueble": {
+        "cod_prov_ine": {
+            "val_format": "N",
+            "ini_char": 93,
+            "length": 2
+        },
+        "nombre_provincia": {
+            "val_format": "X",
+            "ini_char": 95,
+            "length": 25
+        },
+        "cod_muni_dgc": {
+            "val_format": "N",
+            "ini_char": 120,
+            "length": 3
+        },
+        "cod_muni_ine": {
+            "val_format": "N",
+            "ini_char": 123,
+            "length": 3
+        },
+        "nombre_municipio": {
+            "val_format": "X",
+            "ini_char": 126,
+            "length": 40
+        },
+        "nomb_ent_menor": {
+            "val_format": "X",
+            "ini_char": 166,
+            "length": 30
+        },
+        "cod_via_dgc": {
+            "val_format": "N",
+            "ini_char": 196,
+            "length": 5
+        },
+        "tipo_via_pub": {
+            "val_format": "X",
+            "ini_char": 201,
+            "length": 5
+        },
+        "nomb_via_pub": {
+            "val_format": "X",
+            "ini_char": 206,
+            "length": 25
+        },
+        "p_num_policia": {
+            "val_format": "N",
+            "ini_char": 231,
+            "length": 4
+        },
+        "p_letra": {
+            "val_format": "X",
+            "ini_char": 235,
+            "length": 1
+        },
+        "s_num_policia": {
+            "val_format": "N",
+            "ini_char": 236,
+            "length": 4
+        },
+        "s_letra": {
+            "val_format": "X",
+            "ini_char": 240,
+            "length": 1
+        },
+        "kilometro": {
+            "val_format": "N",
+            "ini_char": 241,
+            "length": 5,
+            "decimal": 2
+        },
+        "bloque": {
+            "val_format": "X",
+            "ini_char": 246,
+            "length": 4
+        },
+        "escalera": {
+            "val_format": "X",
+            "ini_char": 250,
+            "length": 5
+        },
+        "planta": {
+            "val_format": "X",
+            "ini_char": 252,
+            "length": 3
+        },
+        "puerta": {
+            "val_format": "X",
+            "ini_char": 255,
+            "length": 3
+        },
+        "txt_dir": {
+            "val_format": "X",
+            "ini_char": 258,
+            "length": 25
+        },
+        "cp": {
+            "val_format": "N",
+            "ini_char": 283,
+            "length": 5
+        },
+        "dis_muni": {
+            "val_format": "N",
+            "ini_char": 288,
+            "length": 2
+        },
+        "cod_muni_dgc_ori": {
+            "val_format": "N",
+            "ini_char": 290,
+            "length": 3
+        },
+        "cod_zona_conc": {
+            "val_format": "N",
+            "ini_char": 293,
+            "length": 2
+        },
+        "cod_poli": {
+            "val_format": "N",
+            "ini_char": 295,
+            "length": 3
+        },
+        "cod_parcela": {
+            "val_format": "N",
+            "ini_char": 298,
+            "length": 5
+        },
+        "cod_paraj_dgc": {
+            "val_format": "N",
+            "ini_char": 303,
+            "length": 5
+        },
+        "nomb_paraj": {
+            "val_format": "X",
+            "ini_char": 308,
+            "length": 30
+        }
+    },
+    "informacion_adicional": {
+        "num_ord_escr": {
+            "val_format": "X",
+            "ini_char": 368,
+            "length": 4
+        },
+        "antiguedad": {
+            "val_format": "N",
+            "ini_char": 372,
+            "length": 4
+        }
+    },
+    "datos_economicos": {
+        "grupo_bi": {
+            "val_format": "X",
+            "ini_char": 428,
+            "length": 1,
+            "dict": {
+                "1": "Inmuebles destinados a la producción de energía eléctrica y gas, al refino de petróleo y centrales nucleares",
+                "2": "Presas, saltos de agua y embalses",
+                "3": "Autopistas, carreteras y túneles de peaje",
+                "4": "Aeropuertos y puertos comerciales",
+                "A": "Almacén -Estacionamiento",
+                "V": "Residencial",
+                "I": "Industrial",
+                "O": "Oficinas",
+                "C": "Comercial",
+                "K": "Deportivo",
+                "T": "Espectáculos",
+                "G": "Ocio y Hostelería",
+                "Y": "Sanidad y Beneficencia",
+                "E": "Cultural",
+                "R": "Religioso",
+                "M": "Obras de urbanización y jardinería, suelos sin edificar",
+                "P": "Edificio singular",
+                "B": "Almacén agrario",
+                "J": "Industrial agrario",
+                "Z": "Agrario"
+            }
+        },
+        "sup_elemento": {
+            "val_format": "N",
+            "ini_char": 442,
+            "length": 10
+        },
+        "sup_inmueble": {
+            "val_format": "N",
+            "ini_char": 452,
+            "length": 10
+        },
+        "coef_prop": {
+            "val_format": "N",
+            "ini_char": 462,
+            "length": 9,
+            "decimal": 6
+        }
+    }
+}

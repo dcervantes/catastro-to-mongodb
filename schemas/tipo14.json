@@ -1,0 +1,153 @@
+{
+    "title": "Construcción",
+    "version": 1,
+    "description": "Existirá uno por cada construcción de cada unidad constructiva en cada parcela catastral.",
+    "type": "object",
+    "properties": {
+        "version": {
+            "title": "Json Schema Version",
+            "description": "Json Schema Version",
+            "type": "number"
+        },
+        "identificacion_inmueble": {
+            "title": "Identificación del bien inmueble",
+            "description": "Identificación del bien inmueble",
+            "type": "object",
+            "properties": {
+                "cod_deleg_meh": {
+                    "title": "Código de Delegación del MEH",
+                    "description": "Código de Delegación del MEH",
+                    "type": "number"
+                },
+                "cod_muni_dgc": {
+                    "title": "Código del Municipio",
+                    "description": "Código del Municipio (según DGC)",
+                    "type": "number"
+                },
+                "parcela_catastral": {
+                    "title": "Parcela catastral",
+                    "description": "Parcela catastral",
+                    "type": "string"
+                },
+                "num_ord_elem_cons": {
+                    "title": "Número de orden del elemento de construcción",
+                    "description": "Número de orden del elemento de construcción",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "cod_deleg_meh",
+                "cod_muni_dgc",
+                "parcela_catastral"
+            ]
+        },
+        "informacion_adicional": {
+            "title": "Información adicional",
+            "description": "Información adicional",
+            "type": "object",
+            "properties": {
+                "num_ord_bi": {
+                    "title": "Número de orden del bien inmueble fiscal",
+                    "description": "Número de orden del bien inmueble fiscal (Número del Cargo al que se imputa el valor de la construcción dentro de la parcela catastral). Dato no consignado en caso de elementos comunes",
+                    "type": "string"
+                },
+                "cod_uni_const": {
+                    "title": "Código de la Unidad Constructiva ",
+                    "description": "Código de la Unidad Constructiva a la que está asociado el local.",
+                    "type": "string"
+                }
+            }
+        },
+        "domi_trib_elem": {
+            "title": "Domicilio tributario del elemento",
+            "description": "Domicilio tributario del elemento",
+            "type": "object",
+            "properties": {
+                "bloque": {
+                    "title": "Bloque",
+                    "description": "Bloque",
+                    "type": "string"
+                },
+                "escalera": {
+                    "title": "Escalera",
+                    "description": "Escalera",
+                    "type": "string"
+                },
+                "planta": {
+                    "title": "Planta",
+                    "description": "Planta",
+                    "type": "string"
+                },
+                "puerta": {
+                    "title": "Puerta",
+                    "description": "Puerta",
+                    "type": "string"
+                }
+            }
+        },
+        "datos_fisicos": {
+            "title": "Datos Físicos",
+            "description": "Datos Físicos",
+            "type": "object",
+            "properties": {
+                "cod_destino": {
+                    "title": "Código de Destino",
+                    "description": "Código de Destino según codificación establecida por la DGC.",
+                    "type": "string"
+                },
+                "tipo_reform": {
+                    "title": "Indicador del tipo de reforma o rehabilitación",
+                    "description": "Indicador del tipo de reforma o rehabilitación, en caso de existir, a efectos del cálculo del coeficiente corrector por antigüedad (Valores posibles R/O/E/I o blanco)",
+                    "type": "string"
+                },
+                "anno_reform": {
+                    "title": "Año de reforma",
+                    "description": "Año de reforma en caso de existir (formato AAAA).",
+                    "type": "number"
+                },
+                "antiguedad": {
+                    "title": "Longitud de fachada",
+                    "description": "Longitud de fachada (en centímetros)",
+                    "type": "number"
+                },
+                "local_interior": {
+                    "title": "Indicador de local interior",
+                    "description": "Indicador de local interior (S/N)",
+                    "type": "string"
+                },
+                "sup_total_local": {
+                    "title": "Superficie total del local",
+                    "description": "Superficie total del local a efectos de catastro,incluida la que corresponda imputar de porches y terrazas (en metros cuadrados)",
+                    "type": "number"
+                },
+                "sup_por_terr": {
+                    "title": "Superficie de porches y terrazas del local",
+                    "description": "Superficie de porches y terrazas del local (en metros cuadrados), a título informativo",
+                    "type": "number"
+                },
+                "sup_imp": {
+                    "title": "",
+                    "description": "Superficie imputable al local situada en otras plantas (en metros cuadrados), a título informativo",
+                    "type": "number"
+                }
+            }
+        },
+        "datos_economicos": {
+            "title": "Domicilio tributario del elemento",
+            "description": "Domicilio tributario del elemento",
+            "type": "object",
+            "properties": {
+                "tipo_const": {
+                    "title": "Tipología constructiva según Normas Técnicas de Valoración",
+                    "description": "Tipología constructiva según Normas Técnicas de Valoración",
+                    "type": "string"
+                },
+                "cod_mod_reparto": {
+                    "title": "Escalera",
+                    "description": "Código de modalidad de reparto, que se informará solamente si el elemento constructivo es elemento común. La composición del código es la siguiente: Primer carácter: a todos o a alguno (T/A), segundo carácter: a locales o a cargos (L/C), tercer carácter: proporción del reparto, por partes iguales, por superficie de los locales, por coeficientes de propiedad, o por coeficientes específicamente determinados (1/2/3/4) Campo intencionadamente en blanco",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

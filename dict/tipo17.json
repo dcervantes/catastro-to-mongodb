@@ -1,0 +1,73 @@
+{
+    "id_elem_rep": {
+        "cod_deleg_meh": {
+            "val_format": "N",
+            "ini_char": 24,
+            "length": 2
+        },
+        "cod_muni_dgc": {
+            "val_format": "N",
+            "ini_char": 26,
+            "length": 3
+        },
+        "clase_bi": {
+            "val_format": "X",
+            "ini_char": 29,
+            "length": 2,
+            "dict": {
+                "UR": "Urbana",
+                "RU": "Rústica",
+                "BI": "BICES: Bien inmueble de características especiales"
+            }
+        },
+        "parcela_catastral": {
+            "val_format": "X",
+            "ini_char": 31,
+            "length": 14
+        },
+        "cod_uc": {
+            "val_format": "X",
+            "ini_char": 45,
+            "length": 4
+        }
+    },
+    "informacion_adicional": {
+        "num_ord_bi": {
+            "val_format": "N",
+            "ini_char": 51,
+            "length": 4
+        }
+    },
+    "datos_fisicos": {
+        "tipo_subp": {
+            "val_format": "X",
+            "ini_char": 55,
+            "length": 1
+        },
+        "sup_subp": {
+            "val_format": "N",
+            "ini_char": 56,
+            "length": 10
+        },
+        "cali_cat": {
+            "val_format": "X",
+            "ini_char": 66,
+            "length": 2
+        },
+        "denim_cc": {
+            "val_format": "X",
+            "ini_char": 68,
+            "length": 40
+        },
+        "int_prod": {
+            "val_format": "N",
+            "ini_char": 108,
+            "length": 2
+        },
+        "cod_mod_rep": {
+            "val_format": "X",
+            "ini_char": 127,
+            "length": 3
+        }
+    }
+}
