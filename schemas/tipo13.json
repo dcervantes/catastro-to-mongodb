@@ -1,18 +1,177 @@
 {
-    "title" : "Unidad Constructiva",
-    "version" : 1,
-    "description" : "Existirá uno por cada unidad constructiva en cada parcela catastral.",
+    "title": "Unidad Constructiva",
+    "version": 1,
+    "description": "Existirá uno por cada unidad constructiva en cada parcela catastral.",
     "type": "object",
     "properties": {
-        "address": {
+        "version": {
+            "title": "Json Schema Version",
+            "description": "Json Schema Version",
+            "type": "number"
+        },
+        "identificacion_inmueble": {
+            "title": "Identificación del bien inmueble",
+            "description": "Identificación del bien inmueble",
             "type": "object",
             "properties": {
-                "street": {"type": "string"},
-                "city": {"type": "string"},
-                "state": {"type": "string"}
+                "cod_deleg_meh": {
+                    "title": "Código de Delegación del MEH",
+                    "description": "Código de Delegación del MEH",
+                    "type": "number"
                 },
-            "required":["street", "city"]
+                "cod_muni_dgc": {
+                    "title": "Código del Municipio",
+                    "description": "Código del Municipio (según DGC)",
+                    "type": "number"
+                },
+                "clase_bi": {
+                    "title": "Clase del Bien inmueble (UR, RU, BI)",
+                    "description": "Clase del Bien inmueble (UR, RU, BI)",
+                    "type": "string"
+                },
+                "parcela_catastral": {
+                    "title": "Parcela catastral",
+                    "description": "Parcela catastral",
+                    "type": "string"
+                },
+                "cod_uni_cons": {
+                    "title": "Código de la Unidad Constructiva",
+                    "description": "Código de la Unidad Constructiva",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cod_deleg_meh",
+                "cod_muni_dgc",
+                "parcela_catastral"
+            ]
+        },
+        "localizacion_inmueble": {
+            "title": "Localización del bien inmueble",
+            "description": "Domicilio Tributario/Localización del bien inmueble",
+            "type": "object",
+            "properties": {
+                "cod_prov_ine": {
+                    "title": "Código de Provincia",
+                    "description": "Código de Provincia (INE)",
+                    "type": "number"
+                },
+                "nombre_provincia": {
+                    "title": "Nombre Provincia",
+                    "description": "Nombre Provincia",
+                    "type": "string"
+                },
+                "cod_muni_dgc": {
+                    "title": "Código del Municipio",
+                    "description": "Código del Municipio (DGC)",
+                    "type": "number"
+                },
+                "cod_muni_ine": {
+                    "title": "Código de Municipio",
+                    "description": "Código de Municipio (INE). Excluido el último dígito de control",
+                    "type": "number"
+                },
+                "nombre_municipio": {
+                    "title": "Nombre del Municipio",
+                    "description": "Nombre del Municipio",
+                    "type": "string"
+                },
+                "nomb_ent_menor": {
+                    "title": "Nombre de la entidad menor",
+                    "description": "Nombre de la entidad menor, en caso de existir",
+                    "type": "string"
+                },
+                "cod_via_dgc": {
+                    "title": "Código de vía pública",
+                    "description": "Código de vía pública (DGC)",
+                    "type": "number"
+                },
+                "tipo_via_pub": {
+                    "title": "Tipo de vía o sigla pública",
+                    "description": "Tipo de vía o sigla pública",
+                    "type": "string"
+                },
+                "nomb_via_pub": {
+                    "title": "Nombre de la vía pública",
+                    "description": "Nombre de la vía pública",
+                    "type": "string"
+                },
+                "p_num_policia": {
+                    "title": "Primer número de policía",
+                    "description": "Primer número de policía",
+                    "type": "number"
+                },
+                "p_letra": {
+                    "title": "Primera letra",
+                    "description": "Primera letra. (Carácter de duplicado)",
+                    "type": "string"
+                },
+                "s_num_policia": {
+                    "title": "Segundo número de policía",
+                    "description": "Segundo número de policía",
+                    "type": "number"
+                },
+                "s_letra": {
+                    "title": "Segunda letra",
+                    "description": "Segunda letra. (Carácter de duplicado)",
+                    "type": "string"
+                },
+                "kilometro": {
+                    "title": "Kilómetro",
+                    "description": "Kilómetro (expresado con tres enteros y dos decimales)",
+                    "type": "number"
+                },
+                "txt_dir": {
+                    "title": "Texto de dirección no estructurada",
+                    "description": "Texto de dirección no estructurada",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cod_prov_ine",
+                "nombre_provincia",
+                "cod_muni_dgc",
+                "cod_muni_ine",
+                "nombre_municipio",
+                "cod_via_dgc",
+                "tipo_via_pub",
+                "nomb_via_pub",
+                "p_num_policia",
+                "s_num_policia",
+                "kilometro"
+            ]
+        },
+        "datos_fisicos": {
+            "title": "Datos Físicos",
+            "description": "Datos Físicos",
+            "type": "object",
+            "properties": {
+                "anno_const": {
+                    "title": "Año de la construcción",
+                    "description": "Año de la construcción (formato (AAAA).",
+                    "type": "number"
+                },
+                "anno_exact_const": {
+                    "title": "Indicador de exactitud del año de construcción",
+                    "description": "Indicador de exactitud del año de construcción ('E', '+', '-', 'C')",
+                    "type": "string"
+                },
+                "sup_ocup_uc": {
+                    "title": "Superficie de suelo ocupada por la Unidad Constructiva",
+                    "description": "Superficie de suelo ocupada por la Unidad Constructiva en metros cuadrados.",
+                    "type": "number"
+                },
+                "long_fachada": {
+                    "title": "Longitud de fachada",
+                    "description": "Longitud de fachada (en centímetros)",
+                    "type": "number"
+                },
+                "cod_uc_matriz": {
+                    "title": "Código de la Unidad Constructiva Matriz.",
+                    "description": "La unidad Constructiva representa un edificio o un conjunto de construcciones particularizadas dentro de un edificio.",
+                    "type": "number"
+                }
             }
-    },
-    "required": ["address"]
+        }
+    }
 }

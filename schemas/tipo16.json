@@ -4,15 +4,47 @@
     "description" : "Existirá al menos uno por cada elemento común que se reparte, siempre que sea necesario especificar repartos especiales.",
     "type": "object",
     "properties": {
-        "address": {
+        "version": {
+            "title": "Json Schema Version",
+            "description": "Json Schema Version",
+            "type": "number"
+        }, 
+        "id_elem_rep": {
+            "title": "Identificación del elemento a repartir",
+            "description": "Identificación del elemento a repartir",
             "type": "object",
             "properties": {
-                "street": {"type": "string"},
-                "city": {"type": "string"},
-                "state": {"type": "string"}
+                "cod_deleg_meh": {
+                    "title": "Código de Delegación del MEH",
+                    "description": "Código de Delegación del MEH",
+                    "type": "number"
                 },
-            "required":["street", "city"]
-            }
-    },
-    "required": ["address"]
+                "cod_muni_dgc": {
+                    "title": "Código del Municipio",
+                    "description": "Código del Municipio (según DGC)",
+                    "type": "number"
+                },
+                "parcela_catastral": {
+                    "title": "Parcela catastral",
+                    "description": "Parcela catastral",
+                    "type": "string"
+                },
+                "num_ord_elem_rep": {
+                    "title": "Número de orden del elemento cuyo valor se reparte",
+                    "description": "Número de orden del elemento cuyo valor se reparte (elem. común de construcción o cultivo)",
+                    "type": "string"
+                },
+                "cal_cas_subp_rep": {
+                    "title": "Calificación catastral de la subparcela a repartir",
+                    "description": "Calificación catastral de la subparcela a repartir (empleada en subparcelas abstractas)",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cod_deleg_meh",
+                "cod_muni_dgc",
+                "parcela_catastral"
+            ]
+        }
+    }
 }

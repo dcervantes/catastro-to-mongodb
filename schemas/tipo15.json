@@ -4,6 +4,11 @@
     "description": "Existirá uno por cada bien inmueble en cada parcela catastral.",
     "type": "object",
     "properties": {
+        "version": {
+            "title": "Json Schema Version",
+            "description": "Json Schema Version",
+            "type": "number"
+        }, 
         "identificacion_inmueble": {
             "title": "Identificación del bien inmueble",
             "description": "Identificación del bien inmueble",

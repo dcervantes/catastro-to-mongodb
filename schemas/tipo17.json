@@ -1,18 +1,99 @@
 {
-    "title" : "Cultivos",
+    "title" : "Cultivos Agrarios",
     "version" : 1,
     "description" : "Existirá uno por cada subparcela de cultivo existente dentro de la parcela catastral.",
     "type": "object",
     "properties": {
-        "address": {
+        "version": {
+            "title": "Json Schema Version",
+            "description": "Json Schema Version",
+            "type": "number"
+        }, 
+        "id_elem_rep": {
+            "title": "Identificación del elemento",
+            "description": "Identificación del elemento",
             "type": "object",
             "properties": {
-                "street": {"type": "string"},
-                "city": {"type": "string"},
-                "state": {"type": "string"}
+                "cod_deleg_meh": {
+                    "title": "Código de Delegación del MEH",
+                    "description": "Código de Delegación del MEH",
+                    "type": "number"
                 },
-            "required":["street", "city"]
+                "cod_muni_dgc": {
+                    "title": "Código del Municipio",
+                    "description": "Código del Municipio (según DGC)",
+                    "type": "number"
+                },
+                "clase_bi": {
+                    "title": "Clase del Bien inmueble (UR, RU, BI)",
+                    "description": "Clase del Bien inmueble (UR, RU, BI)",
+                    "type": "string"
+                },
+                "parcela_catastral": {
+                    "title": "Parcela catastral",
+                    "description": "Parcela catastral",
+                    "type": "string"
+                },
+                "cod_uc": {
+                    "title": "Código de la Unidad Constructiva",
+                    "description": "Código de la Unidad Constructiva",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cod_deleg_meh",
+                "cod_muni_dgc",
+                "parcela_catastral"
+            ]
+        },
+        "informacion_adicional": {
+            "title": "Información adicional",
+            "description": "Información adicional",
+            "type": "object",
+            "properties": {
+                "num_ord_bi": {
+                    "title": "Número de orden del bien inmueble fiscal",
+                    "description": "Número de orden del bien inmueble fiscal (Número del Cargo al que se imputa el valor del cultivo dentro de la parcela catastral). Dato no consignado en caso de elementos comunes",
+                    "type": "number"
+                }
             }
-    },
-    "required": ["address"]
+        },
+        "datos_fisicos": {
+            "title": "Datos Físicos y económicos",
+            "description": "Datos Físicos y económicos",
+            "type": "object",
+            "properties": {
+                "tipo_subp": {
+                    "title": "Tipo de subparcela",
+                    "description": "Tipo de subparcela ( T terreno, A abstracta, D dominio público).",
+                    "type": "string"
+                },
+                "sup_subp": {
+                    "title": "Superficie de la subparcela",
+                    "description": "Superficie de la subparcela expresada en m2 (centiáreas)",
+                    "type": "number"
+                },
+                "cali_cat": {
+                    "title": "Calificación catastral/clase de cultivo",
+                    "description": "Calificación catastral/clase de cultivo.",
+                    "type": "string"
+                },
+                "denim_cc": {
+                    "title": "Denominación de la clase de cultivo",
+                    "description": "Denominación de la clase de cultivo",
+                    "type": "string"
+                },
+                "int_prod": {
+                    "title": "Intensidad productiva",
+                    "description": "Intensidad productiva.",
+                    "type": "number"
+                },
+                "cod_mod_rep": {
+                    "title": "Código de modalidad de reparto",
+                    "description": "Código de modalidad de reparto, que se informará solamente si el cultivo es elemento común. La composición del código es la siguiente: Primer carácter: a todos o a alguno (T/A), segundo carácter: cargos (C), tercer carácter: proporción del reparto, por partes iguales, por superficie de los locales, por coeficientes de propiedad, o por coeficientes específicamente determinados (1/2/3/4)",
+                    "type": "string"
+                }
+            }
+        }
+    }
 }
