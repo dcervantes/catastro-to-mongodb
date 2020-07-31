@@ -75,7 +75,7 @@ Import complete!
 
 [![PyPi release](https://img.shields.io/pypi/v/catastro-to-mongodb.svg)](https://pypi.org/project/catastro-to-mongodb/)
 [![Downloads](https://pepy.tech/badge/catastro-to-mongodb)](https://pepy.tech/project/catastro-to-mongodb)
-[:en:](#catastro-to-mongodb)
+[:gb:](#catastro-to-mongodb)
 
 Script de migración de datos del Catastro (en formato Catalog CP Backup - dBASE IV) a Mongodb
 
