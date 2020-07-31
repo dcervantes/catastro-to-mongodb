@@ -1,1 +1,118 @@
-{}
+{
+    "identificacion_elemento": {
+        "cod_deleg_meh": {
+            "val_format": "N",
+            "ini_char": 24,
+            "length": 2
+        },
+        "cod_muni_dgc": {
+            "val_format": "N",
+            "ini_char": 26,
+            "length": 3
+        },
+        "parcela_catastral": {
+            "val_format": "X",
+            "ini_char": 31,
+            "length": 14
+        },
+        "num_ord_elem_cons": {
+            "val_format": "N",
+            "ini_char": 45,
+            "length": 4
+        }
+    },
+    "informacion_adicional": {
+        "num_ord_bi": {
+            "val_format": "X",
+            "ini_char": 51,
+            "length": 4
+        },
+        "cod_uni_const": {
+            "val_format": "X",
+            "ini_char": 55,
+            "length": 4
+        }
+    },
+    "domi_trib_elem": {
+        "bloque": {
+            "val_format": "X",
+            "ini_char": 59,
+            "length": 4
+        },
+        "escalera": {
+            "val_format": "X",
+            "ini_char": 63,
+            "length": 2
+        },
+        "planta": {
+            "val_format": "X",
+            "ini_char": 65,
+            "length": 3
+        },
+        "puerta": {
+            "val_format": "X",
+            "ini_char": 68,
+            "length": 3
+        }
+    },
+    "datos_fisicos": {
+        "cod_destino": {
+            "val_format": "X",
+            "ini_char": 71,
+            "length": 3
+        },
+        "tipo_reform": {
+            "val_format": "X",
+            "ini_char": 74,
+            "length": 1,
+            "dict": {
+                "R": "Rehabilitación integral",
+                "O": "Reforma total",
+                "E": "Reforma media",
+                "I": "Reforma mínim"
+            }
+        },
+        "anno_reform": {
+            "val_format": "N",
+            "ini_char": 75,
+            "length": 4
+        },
+        "antiguedad": {
+            "val_format": "N",
+            "ini_char": 79,
+            "length": 4
+        },
+        "local_interior": {
+            "val_format": "X",
+            "ini_char": 83,
+            "length": 1
+        },
+        "sup_total_local": {
+            "val_format": "N",
+            "ini_char": 84,
+            "length": 7
+        },
+        "sup_por_terr": {
+            "val_format": "N",
+            "ini_char": 91,
+            "length": 7
+        },
+        "sup_imp": {
+            "val_format": "N",
+            "ini_char": 98,
+            "length": 7
+        }
+    },
+    "datos_economicos": {
+        "tipo_const": {
+            "val_format": "X",
+            "ini_char": 105,
+            "length": 5
+        },
+        "cod_mod_reparto": {
+            "val_format": "X",
+            "ini_char": 112,
+            "length": 3
+        }
+    }
+}
