@@ -9,10 +9,10 @@ Migration Script from Catastro files ( Catalog CP Backup - dBASE IV ) to Mongodb
 ## Installation
 
 ```bash
-$ pip install catastro_to_mongodb
+$ pip install catastro-to-mongodb
 ```
 ## Usage
-![Peek 2020-07-31 21-12](https://user-images.githubusercontent.com/3668610/89069491-87b97700-d373-11ea-999b-2fe6fde22cbd.gif)
+![Usage capture](https://user-images.githubusercontent.com/3668610/89082426-497d8100-d38e-11ea-87ee-92a1a54147bf.gif)
 
 ```text
 Usage: catastro_to_mongodb.py [OPTIONS] CAT_FILE
@@ -33,20 +33,26 @@ Options:
 ```
 ## Examples
 
-Import `catastro.CAT` to `catastro` database:
+### Change database name
+
+Import `catastro.CAT` to `test` database:
+```bash
+$ catastro-to-mongodb --database test ./catastro.CAT
+```
+```bash
+$ catastro-to-mongodb -d test ./catastro.CAT
+```
+### Change host and port
+
+Import `catastro.CAT` to `test` database in `test.xyz:16014`:
+```bash
+$ catastro-to-mongodb --database test --host test.xyz --port 16014 ./catastro.CAT
+```
 
 ```bash
-$ catastro_to_mongodb -d catastro ./catastro.CAT
+$ catastro-to-mongodb -d test -H test.xyz -p 16014 ./catastro.CAT
 ```
 
-```txt
-....................................
-Connecting to 0.0.0.0:27017
-....................................
-
-Import complete!
-
-```
 ## Database
 
 
