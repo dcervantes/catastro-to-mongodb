@@ -16,6 +16,7 @@ from time import sleep
 import subprocess
 
 __VERSION__ = "0.0.1"
+__SCHEMA_VERSION__ = 1
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -69,91 +70,100 @@ def cli(database, host, port, timeout, file):
 
     # Create database and collections
     db = mongo_client[database]
-    cinmuebles = db["Inmuebles"]
+    colecciones = {}
     fill_char = click.style('=', fg='yellow')
     cat_file_lines = line_count(file)
-    print(cat_file_lines)
     cat_file = open(file, "r")
     # read file
     json_schemas = {}
     json_dict = {}
-    with open('./schemas/tipo15.json', 'r') as myfile:
-        json_schemas =  json.loads(myfile.read())
-
-    with open('./dict/tipo15.json', 'r') as myfile:
-        json_dict =  json.loads(myfile.read())
-
+    tipos = ["11", "13", "14", "15", "16", "17"]
+    for tipo in tipos:
+        with open('./schemas/tipo' + tipo + '.json', 'r') as schema:
+            json_schemas[tipo] = json.loads(schema.read())
+            db["Schemas"].insert_one(json_schemas[tipo])
+        with open('./dict/tipo' + tipo + '.json', 'r') as dic:
+            json_dict[tipo] = json.loads(dic.read())
+        colecciones[tipo] = db[json_schemas[tipo]["title"]]
     with open(file, "r") as cat_file:
         with click.progressbar(cat_file, label='Loading...', fill_char=fill_char, length=cat_file_lines, show_percent=True, show_pos=True) as lines:
             for line in lines:
-                cinmuebles.insert_one(cat_to_json(line, json_schemas, json_dict)) 
+                tipo = line[:2]
+                if tipo in tipos:
+                    colecciones[tipo].insert_one(cat_to_json(
+                        line, json_schemas[tipo], json_dict[tipo]))
 
     click.echo(click.style("Import complete!", fg="green"))
 
+
 def cat_to_json(line, json_schemas, json_dict):
 
-    json_dict_keys = get_simple_keys(line, json_dict)
-    validate_json(json_dict_keys, json_schemas)
-
-    return json_dict_keys
-
-def get_field_value(line, data):
-
-    val_format = data["val_format"] 
-    ini_char = int(data ["ini_char"]) - 1
-    length = int(data["length"])
-    end_char = ini_char + length
-    value = line[ini_char:end_char].strip()
-    # Text format
-    if val_format == 'X':
-        if "dict" in data:
-            return data["dict"][value]
-        return value
-    
-    elif val_format == 'N':
-        if "decimal" in data:
-            return float(value)/int(data["decimal"])
-        return int(value)
-    else:
-        return ""
-
-
-def get_simple_keys(line, data):
     result = {}
-    for pkey, pvalue in data.items():
+    result["version"] = __SCHEMA_VERSION__
+    for pkey, pvalue in json_dict.items():
         result[pkey] = {}
         for skey, svalue in pvalue.items():
             value = get_field_value(line, svalue)
             if value != "":
                 result[pkey][skey] = value
+
+    validate_json(result, json_schemas)
+
     return result
+
+
+def get_field_value(line, data):
+    val_format = data["val_format"]
+    ini_char = int(data["ini_char"]) - 1
+    length = int(data["length"])
+    end_char = ini_char + length
+    value = line[ini_char:end_char].strip()
+    # Text format
+    if val_format == 'X' and value != "":
+        if "dict" in data:
+            return data["dict"][value]
+        return value
+
+    elif val_format == 'N' and value != "":
+        if "decimal" in data:
+            value = float(value)
+            value /= 10**int(data["decimal"])
+            return value
+        return int(value)
+    else:
+        return ""
+
 
 def validate_json(validJson, schema):
     try:
         validate(validJson, schema)
-    
+
     except SchemaError as e:
         print(e)
-        
+
     except ValidationError as e:
         print(e)
-        
+
         print("---------")
         print(e.absolute_path)
-    
+
         print("---------")
         print(e.absolute_schema_path)
+
 
 def check_connection(mongo_client, host, port):
     try:
         mongo_client.server_info()
     except ServerSelectionTimeoutError as e:
-        click.echo(f"Connection error while attempting to connect to {host}:{port}")
+        click.echo(
+            f"Connection error while attempting to connect to {host}:{port}")
         exit(1)
 
+
 def line_count(filename):
-    #Every line has 1000 characters 
+    # Every line has 1000 characters
     return int(Path(filename).stat().st_size / 1000)
+
 
 if __name__ == "__main__":
     cli()
