@@ -1,21 +1,16 @@
 #!/usr/bin/env python3
 
 import json
-from os.path import basename
-from re import match
-from sys import exit
-from pathlib import Path
-from jsonschema import validate, ValidationError, SchemaError
-
 import warnings
 import click
-from pandas import read_csv
+
+from pathlib import Path
+from sys import exit
+from jsonschema import validate, ValidationError, SchemaError
 from pymongo import MongoClient
 from pymongo.errors import ServerSelectionTimeoutError
-from time import sleep
-import subprocess
 
-__VERSION__ = "0.0.1"
+__VERSION__ = "1.0.0"
 __SCHEMA_VERSION__ = 1
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
@@ -58,7 +53,12 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 )
 @click.argument("file")
 def cli(database, host, port, timeout, file):
-    """Import a CAT FILE to MongoDB"""
+    """Import a CAT FILE to MongoDB
+
+    \b
+    Migration Script from Catastro files ( Catalog CP Backup - dBASE IV ) to Mongodb
+    More info: https://github.com/dcervantes/catastro-to-mongodb
+    """
 
     # Connect to MongoDB client
     click.echo("....................................")
@@ -86,7 +86,7 @@ def cli(database, host, port, timeout, file):
             json_dict[tipo] = json.loads(dic.read())
         colecciones[tipo] = db[json_schemas[tipo]["title"]]
     with open(file, "r") as cat_file:
-        with click.progressbar(cat_file, label='Loading...', fill_char=fill_char, length=cat_file_lines, show_percent=True, show_pos=True) as lines:
+        with click.progressbar(cat_file, label='Importing CAT file to Mongodb...', fill_char=fill_char, length=cat_file_lines, show_percent=True, show_pos=True) as lines:
             for line in lines:
                 tipo = line[:2]
                 if tipo in tipos:
