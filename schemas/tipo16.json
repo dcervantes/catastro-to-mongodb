@@ -1,14 +1,14 @@
 {
-    "title" : "Reparto de elementos comunes",
-    "version" : 1,
-    "description" : "Existirá al menos uno por cada elemento común que se reparte, siempre que sea necesario especificar repartos especiales.",
+    "title": "Reparto de elementos comunes",
+    "version": 1,
+    "description": "Existirá al menos uno por cada elemento común que se reparte, siempre que sea necesario especificar repartos especiales.",
     "type": "object",
     "properties": {
         "version": {
             "title": "Json Schema Version",
             "description": "Json Schema Version",
             "type": "number"
-        }, 
+        },
         "id_elem_rep": {
             "title": "Identificación del elemento a repartir",
             "description": "Identificación del elemento a repartir",

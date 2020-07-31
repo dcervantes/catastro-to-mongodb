@@ -8,7 +8,7 @@
             "title": "Json Schema Version",
             "description": "Json Schema Version",
             "type": "number"
-        }, 
+        },
         "identificacion_inmueble": {
             "title": "Identificación del bien inmueble",
             "description": "Identificación del bien inmueble",
@@ -200,7 +200,7 @@
                 },
                 "sup_total_cons": {
                     "title": "Superficie construida total",
-                    "description": "Superficie construida total. Será igual a la suma de las superficies de los elementos constructivos de la finca (incluida la que corresponde imputar de sus porches y terrazas)", 
+                    "description": "Superficie construida total. Será igual a la suma de las superficies de los elementos constructivos de la finca (incluida la que corresponde imputar de sus porches y terrazas)",
                     "type": "number"
                 },
                 "sup_cons_sob_ras": {

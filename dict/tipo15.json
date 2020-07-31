@@ -41,7 +41,7 @@
             "length": 1
         }
     },
-    "identificadores_adicionales": {                
+    "identificadores_adicionales": {
         "num_fijo_bi": {
             "val_format": "N",
             "ini_char": 51,
@@ -78,12 +78,12 @@
             "length": 6
         }
     },
-    "localizacion_inmueble": {   
+    "localizacion_inmueble": {
         "cod_prov_ine": {
             "val_format": "N",
             "ini_char": 93,
             "length": 2
-        } ,
+        },
         "nombre_provincia": {
             "val_format": "X",
             "ini_char": 95,
@@ -173,7 +173,7 @@
         "txt_dir": {
             "val_format": "X",
             "ini_char": 258,
-            "length": 25  
+            "length": 25
         },
         "cp": {
             "val_format": "N",
@@ -210,13 +210,13 @@
             "ini_char": 303,
             "length": 5
         },
-        "nomb_paraj" : {
+        "nomb_paraj": {
             "val_format": "X",
             "ini_char": 308,
             "length": 30
-        }            
+        }
     },
-    "informacion_adicional": {                
+    "informacion_adicional": {
         "num_ord_escr": {
             "val_format": "X",
             "ini_char": 368,
@@ -228,7 +228,7 @@
             "length": 4
         }
     },
-    "datos_economicos": {   
+    "datos_economicos": {
         "grupo_bi": {
             "val_format": "X",
             "ini_char": 428,

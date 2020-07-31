@@ -8,7 +8,7 @@
             "title": "Json Schema Version",
             "description": "Json Schema Version",
             "type": "number"
-        }, 
+        },
         "identificacion_inmueble": {
             "title": "Identificación del bien inmueble",
             "description": "Identificación del bien inmueble",
@@ -53,7 +53,7 @@
                 },
                 "cod_uni_const": {
                     "title": "Código de la Unidad Constructiva ",
-                    "description": "Código de la Unidad Constructiva a la que está asociado el local.", 
+                    "description": "Código de la Unidad Constructiva a la que está asociado el local.",
                     "type": "string"
                 }
             }
@@ -99,7 +99,6 @@
                     "title": "Indicador del tipo de reforma o rehabilitación",
                     "description": "Indicador del tipo de reforma o rehabilitación, en caso de existir, a efectos del cálculo del coeficiente corrector por antigüedad (Valores posibles R/O/E/I o blanco)",
                     "type": "string"
-
                 },
                 "anno_reform": {
                     "title": "Año de reforma",
