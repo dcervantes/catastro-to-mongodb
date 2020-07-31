@@ -51,7 +51,7 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
     help="Connection timeout (seconds).",
     show_default=True,
 )
-@click.argument("file")
+@click.argument("file", metavar='CAT_FILE')
 def cli(database, host, port, timeout, file):
     """Import a CAT FILE to MongoDB
 
