@@ -10,7 +10,7 @@ from jsonschema import validate, ValidationError, SchemaError
 from pymongo import MongoClient
 from pymongo.errors import ServerSelectionTimeoutError
 
-__VERSION__ = "1.0.1"
+__VERSION__ = "1.0.2"
 __SCHEMA_VERSION__ = 1
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
