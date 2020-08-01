@@ -16,7 +16,7 @@ setuptools.setup(
     url="https://github.com/dcervantes/catastro-to-mongodb",
     packages=setuptools.find_packages(),
     install_requires=["click", "pymongo"],
-    py_modules=["csv_2_mongo"],
+    py_modules=["catastro_to_mongodb"],
     entry_points={"console_scripts": ["catastro-to-mongodb=catastro_to_mongodb:cli"]},
     classifiers=[
         "Intended Audience :: Developers",
